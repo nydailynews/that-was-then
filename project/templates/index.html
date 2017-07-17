@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block style %}{% endblock style %}
+{% block content %}
+
+<div id="intro-wrapper">
+    <img src="/static/img/clock.png">
+    <h2>Big Town</h2>
+        <h1>The History of NYC</h1>
+        <p>Intro text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <div class="social">
+        <ul class="ra-share" id="ra-share-top" style="text-align: center;">
+            <li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=">facebook</a> </li>
+            <li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=">Tweet</a></li>
+            <li class="ra-share-e"> <a href="mailto:?subject=&body=">email</a> </li>
+        </ul>
+    </div>
+</div>
+
+<div class="year-band">
+    <ul>
+        {% for item in response.yearband %}
+        <li><a href="#home"> {{item}} </a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+<hr class="yellow-rule">
+
+<div class="columns">
+    <h2>1600 - 1899</h2>
+    <section>
+        <img src="http://via.placeholder.com/300x150">
+        <h6>Manhattan 1898</h6>
+        <h4>Story hedline</h4>
+        <p>There should probably be some text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+    </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% include 'includes/ad02.html' %}
+
+
+{% endblock content %}

@@ -1,0 +1,225 @@
+body {
+    width: 100%;
+    margin: 0;
+    background-color: #fafafa;
+}
+
+#nydn-header {
+    z-index:1003;
+    width:100%;
+    background-color: #333333;
+}
+
+#nydn-header-wrap {
+    height: 51px;
+    padding: 10px 20px;
+    position: relative;
+}
+
+#nydn-logo {
+    float: left;
+    width: 200px;
+    height: 17px;
+    background: url(http://interactive.nydailynews.com/includes/media/nydn-logo-white.png) 0 0 no-repeat;
+    margin: 8px 15px 0px 30px;
+}
+
+#social {
+    float: right;
+}
+
+/* HEADER WITH IMAGE */
+#intro-wrapper {
+    background-image: url(http://via.placeholder.com/1200x475);
+    width: 100%;
+    height: 475px;
+    padding: 50px;
+    text-align: center;
+}
+
+#intro-wrapper h1 {
+    width: 100%;
+    margin: auto;
+    font: bold 75px 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    color: white;
+}
+
+#intro-wrapper p {
+    max-width: 1000px;
+    color: white;
+    font: 17px 'Open Sans', sans-serif;
+    line-height: 23px;
+    margin: auto;
+}
+
+#intro-wrapper h2 {
+    position: relative;
+    font: normal 30px 'Open Sans', sans-serif;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 10px;
+}
+
+#intro-wrapper h2:before, h2:after {
+    content: '';
+    width: 150px;
+    height: 3px;
+    display:inline-block;
+    background-color: white;
+    vertical-align: 0.3em;
+    margin: 0 -100%;
+}
+
+#intro-wrapper h2:before {
+    margin-right: 0.75em;
+}
+
+#intro-wrapper h2:after {
+    margin-left: 0.75em;
+}
+
+.social {
+    margin-top: 40px;
+}
+
+.year-band {
+    text-align: center;
+}
+
+.year-band ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color: #012730;
+    height: 50px;
+    width: 100%;
+    font: bold 14px 'Open Sans', sans-serif;
+    color: #d9af0e;
+    letter-spacing: 1px;
+}
+
+.year-band li {
+    display: inline-block;
+    margin: 0 25px;
+}
+
+.year-band li a {
+    display: block;
+    color: #d9af0e;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+
+}
+
+.year-band li a:hover {
+    background-color: #d9af0e;
+    color: #fafafa;
+}
+
+.yellow-rule {
+    height: 8px;
+    background-color: #d9af0e;
+    border: 0;
+    margin: 0;
+}
+
+
+/* MAIN CONTENT */
+.columns {
+    margin: 0 50px;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-width: 450px;
+    -moz-column-width: 450px;
+    column-width: 450px;
+    -moz-column-gap: 5em;
+    -webkit-column-gap: 5em;
+    column-gap: 5em;
+    -webkit-column-rule: 1px solid #ddd;
+    -moz-column-rule: 1px solid #ddd;
+    column-rule: 1px solid #ddd;
+}
+
+section {
+    height: 150px;
+    margin-bottom: 15px;
+}
+
+.columns img {
+    margin: 0 20px 20px 0;
+    float: left;
+}
+
+.columns h2 {
+    font: bold 30px 'Open Sans', sans-serif;
+    color: #012730;
+    margin: 30px 0;
+    column-span: all;
+    text-align: center;
+}
+
+.columns h2:after {
+    display: none;
+}
+
+.columns h4 {
+    font: bold 25px 'Open Sans', sans-serif;
+    color: #333;
+}
+
+.columns h6 {
+    font: normal 15px 'Open Sans', sans-serif;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.columns p {
+    font: normal 14px 'Open Sans', sans-serif;
+}
+
+
+
+
+
+/*HANDHELD STYLES*/
+
+@media only screen and (min-width: 320px) and (max-width: 1100px) {
+    #social {
+        display: none;
+    }
+
+    #nydn-logo {
+        margin: 8px 15px 0px 37px
+    }
+
+    #intro-wrapper {
+        padding: 25px;
+    }
+
+    #intro-wrapper h2 {
+        font: normal 17px 'Open Sans', sans-serif;
+    }
+
+    #intro-wrapper h2:before, h2:after {
+        display: none;
+    }
+
+    #intro-wrapper h1 {
+        font: bold 40px 'Open Sans', sans-serif;
+    }
+
+    #intro-wrapper p {
+    font: 13px 'Open Sans', sans-serif;
+    line-height: 18px;
+    }
+
+    .social {
+        margin-top: 5px;
+    }
+}
