@@ -147,13 +147,15 @@ body {
 }
 
 section {
+    display: inline;
     height: 150px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .columns img {
-    margin: 0 20px 20px 0;
     float: left;
+    margin-right: 30px;
+    margin-bottom: 15px;
 }
 
 .columns h2 {
@@ -181,6 +183,7 @@ section {
 
 .columns p {
     font: normal 14px 'Open Sans', sans-serif;
+    margin-bottom: 30px;
 }
 
 
@@ -204,6 +207,7 @@ section {
 
     #intro-wrapper h2 {
         font: normal 17px 'Open Sans', sans-serif;
+        color: #d9af0e;
     }
 
     #intro-wrapper h2:before, h2:after {
@@ -220,6 +224,31 @@ section {
     }
 
     .social {
-        margin-top: 5px;
+        margin-top: 10px;
     }
+
+    .columns {
+        width: 300px;
+        margin: auto;
+    }
+
+    #handheld #dropdown {
+        background-color: #012730;
+        height: 50px;
+        width: 100%;
+        font: bold 14px 'Open Sans', sans-serif;
+        color: #d9af0e;
+        letter-spacing: 1px;
+        padding: 10px;
+    }
+
+    #menu {
+        background-color: #D9AF08;
+        border-radius: 0;
+        height: 30px;
+        font: bold 14px 'Open Sans', sans-serif;
+        color: white;
+    }
+
+
 }
