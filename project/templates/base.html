@@ -56,7 +56,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:domain" content="http://interactive.nydailynews.com"/>
     <meta name="twitter:site" content="@nydailynews">
-    <meta name="twitter:creator" content="@jaysunsilver">
+    <meta name="twitter:creator" content="@kelliparker">
     <meta name="decorator" content="responsive" />
     <meta name="nydn_section" content="NY Daily News" />
     <meta name="msvalidate.01" content="02916AAC0DA8B068EFE01D721E03ED7E" />
@@ -94,94 +94,11 @@
     </script>
     
     <!-- ADS-START -->
-     <!-- ads -->
-    <script>
-        var googletag = googletag || {};
-        googletag.cmd = googletag.cmd || [];
-        (function() {
-        var gads = document.createElement('script');
-        gads.async = true;
-        var useSSL = 'https:' == document.location.protocol;
-        gads.src = (useSSL ? 'https:' : 'http:') + 
-        '//www.googletagservices.com/tag/js/gpt.js';
-        var node = document.getElementsByTagName('script')[0];
-        node.parentNode.insertBefore(gads, node);
-        })();
-        var is_mobile = /Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        var ad_tag = 'project';
-    </script>
-    <script>
-      if( !is_mobile ) {
-          googletag.cmd.push(function() {
-          googletag.defineSlot('/4692832/NYDN/Interactive',  [[728, 90]], 'div-gpt-ad-x101').addService(googletag.pubads())
-          .setTargeting("interactive",ad_tag)
-          .setTargeting("position","x101");
-          });
-          googletag.cmd.push(function() {
-          googletag.defineSlot('/4692832/NYDN/Interactive',  [[300, 250]], 'div-gpt-ad-1423507761396-1').addService(googletag.pubads())
-          .setTargeting("interactive",ad_tag)
-          .setTargeting("position","x102");
-          });
-          googletag.cmd.push(function() {
-          googletag.defineSlot('/4692832/NYDN/Interactive',  [[300, 250]], 'div-gpt-ad-1423507761396-2').addService(googletag.pubads())
-          .setTargeting("interactive",ad_tag)
-          .setTargeting("position","x103");
-          });
-          googletag.cmd.push(function() {
-          googletag.defineSlot('/4692832/NYDN/Interactive',  [[300, 250]], 'div-gpt-ad-1423507761396-3').addService(googletag.pubads())
-          .setTargeting("interactive",ad_tag)
-          .setTargeting("position","x104");
-          googletag.pubads().enableSingleRequest();
-          googletag.enableServices();
-          });
-        }
-    </script>
-    <!-- mobile ad -->
-    <script>
-        if( is_mobile ) {        
-          googletag.cmd.push(function() {
-          googletag.defineSlot('/4692832/M.NYDN/Interactive', [[320, 50]], 'div-gpt-ad-x101').addService(googletag.pubads())
-          .setTargeting("interactive",ad_tag)
-          .setTargeting("position","x101");
-          });
-          googletag.cmd.push(function() {
-          googletag.defineSlot('/4692832/M.NYDN/Interactive', [[300, 250]], 'div-gpt-ad-1423507761396-1').addService(googletag.pubads())
-          .setTargeting("interactive",ad_tag)
-          .setTargeting("position","x102");
-          });
-          googletag.cmd.push(function() {
-          googletag.defineSlot('/4692832/M.NYDN/Interactive', [[300, 250]], 'div-gpt-ad-1423507761396-2').addService(googletag.pubads())
-          .setTargeting("interactive",ad_tag)
-          .setTargeting("position","x103");          
-          });
-          googletag.cmd.push(function() {
-          googletag.defineSlot('/4692832/M.NYDN/Interactive', [[300, 250]], 'div-gpt-ad-1423507761396-3').addService(googletag.pubads())
-          .setTargeting("interactive",ad_tag)
-          .setTargeting("position","x104");
-          googletag.pubads().enableSingleRequest();
-          googletag.enableServices();
-          });
-        }
-    </script>
+    <script onload="nydn_ads('big-town');" src="http://interactive.nydailynews.com/includes/ads/ads.js"></script>
     <!-- ADS-END -->
 
     <script src="http://interactive.nydailynews.com/js/jquery.min.js"></script>
     
-    <script>
-    var clicker = function (id) {if($("#read-more-" + id).hasClass("collapsed")){expand(id);}else{collapse(id);}}
-
-    var expand = function (id){$("#read-more-" + id).stop().addClass("on").animate({"max-height":"800px"},200,function(){$("#read-more-" + id).removeClass("collapsed");});}
-
-    var collapse = function (id){$("#read-more-" + id).stop().removeClass("on").animate({"max-height":"125px"},200,function(){$("#read-more-" + id).addClass("collapsed");});}
-
-    var expand_all = function() {
-        $.each($(".collapsed"), function (index, value) {
-            expand(index);
-        });
-        $('.expand-all').addClass('hide');       
-    }
-    </script>
-
     <link rel="stylesheet" type="text/css" href="http://assets.nydailynews.com/nydn/c/rh.css">
     <link rel="stylesheet" type="text/css" href="http://assets.nydailynews.com/nydn/c/ra.css">
     <link rel="stylesheet" type="text/css" href="{{response.app.url_root}}static/css/style.css">
@@ -195,7 +112,6 @@
     <script>var nav_params = {section: 'projects', url: 'http://interactive.nydailynews.com/project/'};</script>
     <script src="http://interactive.nydailynews.com/library/vendor-nav/vendor-include.js" defer></script>
 </head>
-
 <body id="nydailynews" data-section="nydailynews" data-subsection="NY Daily News">
 
 <!-- SITEHEADER-START -->

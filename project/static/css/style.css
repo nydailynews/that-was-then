@@ -129,6 +129,16 @@ body {
 }
 
 
+/* AD STYLES */
+.center {
+    margin: auto;
+}
+.ad > span {
+    font-size:10px;
+    color:#999;
+    font-family:sans-serif;
+}
+
 /* MAIN CONTENT */
 .columns {
     margin: 0 50px;
