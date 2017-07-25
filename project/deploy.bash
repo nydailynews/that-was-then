@@ -6,7 +6,7 @@ ENVIRON='PROD'
 export environ=$ENVIRON
 SERVER='qa'
 DIR='/apps/project/'
-PROJECT='project-dir-name'
+PROJECT='archive'
 LOCATION_OVERRIDE=0
 html_only() { 
     echo ''
@@ -40,9 +40,6 @@ done
 
 # If we bailed on deploy mid-deploy we'll still have the public dir around.
 if [ -d "$PROJECT" ]; then rm -fr $PROJECT; fi
-
-# J-A-N-K-Y
-#wget -O tag-russia-1.html http://interactive.nydailynews.com/project/donald-trump-ties-russia-key-players/tag-russia-1.html
 
 #python tests.py && \
 html_only && \

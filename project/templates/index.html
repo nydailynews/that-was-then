@@ -4,7 +4,7 @@
 
 <div id="intro-bg">
     <div id="intro">
-        <img src="/static/img/clock.png">
+        <img src="{{response.app.url_root}}static/img/clock.png">
         <h2>Big Town, Big Times</h2>
         <h1>An Amazing History of NYC</h1>
         <p>The sinners, saints, victors, victims, lovers, lost souls, magnates, madmen, geniuses and fools who powered the epic rise of America’s largest metropolis</p>
@@ -19,17 +19,25 @@
     </div>
 </div>
 
-<div class="year-band">
+<nav class="year-band">
     <ul>
-        {% for item in response.yearband %}
-        <li><a href="#home"> {{item}} </a></li>
-        {% endfor %}
+        {% for item in response.yearband -%}
+        <li><a href="#{{item|slugify}}"> {{item}} </a></li>
+        {%- endfor %}
     </ul>
-</div>
+</nav>
 
-<div id="handheld">
-    {% include 'includes/dropdown.html' %}
-</div>
+<nav id="handheld">
+    <div id="dropdown">
+        <div>SELECT YEAR &nbsp;
+        <select id="menu">
+        {% for item in response.yearband -%}
+        <option value="{{item|slugify}}"> {{item}} </option>
+        {%- endfor %}
+        </select>
+        </div>
+    </div>
+</nav>
 
 <hr class="yellow-rule">
 
