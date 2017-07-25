@@ -31,50 +31,30 @@
 
 <hr class="yellow-rule">
 
-<div class="columns">
-    <h2>1600 - 1899</h2>
-    <section>
-        <img src="http://via.placeholder.com/300x150">
-        <h6>The five boroughs 1898</h6>
-        <h4>Story hedline 1</h4>
-        <p>There should probably be some text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-    </section>
-
-    <section>
-        <img src="http://via.placeholder.com/300x150">
-        <h6>Manhattan 1898</h6>
-        <h4>Story hedline 2</h4>
-        <p>There should probably be some text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-    </section>
-
-    <section>
-        <img src="http://via.placeholder.com/300x150">
-        <h6>Manhattan 1898</h6>
-        <h4>Story hedline 3</h4>
-        <p>There should probably be some text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-    </section>
-
-    <section>
-        <img src="http://via.placeholder.com/300x150">
-        <h6>Manhattan 1898</h6>
-        <h4>Story hedline 4</h4>
-        <p>There should probably be some text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-    </section>
-
-    
-</div>
-
-
-
-
-
-
-
-
-
-
-
-{% include 'includes/ad02.html' %}
+{% set ads = [ '01', '02', '03', '04' ] -%}
+{% for section in response.yearband %}
+<section class="columns" id="{{section|slugify}}">
+    <h2>{{section}}</h2>
+    {% for item in response.data if item['Bucket'] == section %}
+        <section>
+            <div>
+                <a href="{{item['URL']}}">
+                    <img src="{{item['PHOTO URL']}}" alt="{{item['HEADLINE']}}">
+                </a>
+            </div>
+            <h4>{{item['BOROUGH  OR NEIGHBORHOOD']}} {{item['YEAR']}}</h4>
+            <h3><a href="{{item['URL']}}">{{item['HEADLINE']}}</a></h3>
+            {#
+            <p>{{item}}</p>
+            #}
+        </section>
+    {% endfor %}
+</section>
+{% if ads[loop.index0] %}
+    {% set ad_include = 'includes/ad' + ads[loop.index0] + '.html' %}
+    {% include ad_include %}
+{% endif %}
+{% endfor %}
 
 
 {% endblock content %}

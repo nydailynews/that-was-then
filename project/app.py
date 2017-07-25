@@ -3,10 +3,10 @@
 import os
 import json
 from flask import Flask
-from flask import Markup
 from flask import g, render_template, url_for, redirect, abort, request
 from datetime import date, datetime
-
+import re
+from unicodedata import normalize
 
 app = Flask(__name__)
 app.debug = True
@@ -30,15 +30,38 @@ with app.app_context():
     app.page = page
     app.sitename = ''
 
+
+class JsonQuery(object):
+    ''' Methods for handling and querying the json data.
+        '''
+    def __init__(self, data):
+        self.data = data
+
+    def get_uniques(self, field):
+        ''' Given a field, get the unique values for that field.
+            Returns a list.
+            '''
+        uniques = []
+        for item in self.data.__iter__():
+            if item[field].strip() not in uniques:
+                uniques.append(item[field].strip())
+        return uniques
+
 @app.route('/')
 def index():
     app.page['title'] = ''.decode('utf-8')
     app.page['description'] = ''.decode('utf-8')
     app.page['keywords'] = ''.decode('utf-8')
 
+    with open('data/bigtown.json', 'rb') as jsond:
+        data = json.load(jsond)
+
+    jq = JsonQuery(data)
+    yearband = jq.get_uniques('Bucket')
     response = {
         'app': app,
-        'yearband': ['1600 - 1899','1900 - 1919','1920 - 1939','1940 - 1959','1960 - 1979','1980 - 1999', '2000 - PRESENT']
+        'data': data,
+        'yearband': yearband
     }
     return render_template('index.html', response=response)
 
@@ -75,6 +98,19 @@ def ordinal_filter(value):
         o = 'th'
     return '%d%s' % (value, o)
 app.add_template_filter(ordinal_filter)
+
+_punct_re = re.compile(r'[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.]+')
+
+@app.template_filter(name='slugify')
+def slugify_filter(text, delim=u'-'):
+    """Generates an slightly worse ASCII-only slug."""
+    result = []
+    for word in _punct_re.split(text.lower()):
+        word = normalize('NFKD', word).encode('ascii', 'ignore')
+        if word:
+            result.append(word)
+    return unicode(delim.join(result))
+app.add_template_filter(slugify_filter)
 
 if __name__ == '__main__':
     app.run()
