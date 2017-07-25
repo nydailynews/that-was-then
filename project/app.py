@@ -38,7 +38,7 @@ def index():
 
     response = {
         'app': app,
-        'yearband': ['1600 - 1899','1900 - 1919','1920 - 1939','1940 - 1959','1960 - 1979','1980 - 1999', '2000 - PRESENT']
+        'yearband': ['1600 - 1899','1900 - 1919','1920 - 1939','1940 - 1959','1960 - 1979','1980 - 1985']
     }
     return render_template('index.html', response=response)
 
