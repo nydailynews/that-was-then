@@ -132,6 +132,7 @@ body {
 /* AD STYLES */
 .center {
     margin: auto;
+    text-align: center;
 }
 .ad > span {
     font-size:10px;
