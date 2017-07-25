@@ -31,12 +31,12 @@ body {
 /* HEADER WITH IMAGE */
 #intro-bg {
     background-image: url(../img/big-town-header.jpg);
+    background-position: center;
     background-repeat: no-repeat;
 }
 
 #intro {
     width: 100%;
-    height: 500px;
     padding: 50px;
     text-align: center;
 }
@@ -145,6 +145,11 @@ body {
 }
 
 /* MAIN CONTENT */
+
+a {
+    color: #012730;
+}
+
 .columns {
     margin: 0 50px;
     -webkit-column-count: 2;
@@ -183,7 +188,7 @@ body {
 
 .columns h3 {
     font: bold 25px 'Open Sans', sans-serif;
-    line-height: 22px;
+    line-height: 30px;
     color: #333;
 }
 
@@ -225,7 +230,7 @@ body {
     }
 
     #intro {
-        padding: 25px;
+        padding: 25px 25px 5px 25px;
     }
 
     #intro h2 {
@@ -242,12 +247,12 @@ body {
     }
 
     #intro p {
-    font: 13px 'Open Sans', sans-serif;
-    line-height: 18px;
+    font: 15px 'Open Sans', sans-serif;
+    line-height: 20px;
     }
 
     .social {
-        margin-top: 10px;
+        margin-top: 20px;
     }
 
     .columns {
