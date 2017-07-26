@@ -70,7 +70,7 @@ body {
     text-align: center;
     text-transform: uppercase;
     color: white;
-    margin-top: 10px;
+    margin: 15px auto;
 }
 
 #intro h2:before, #intro h2:after {
@@ -242,7 +242,7 @@ h2.date-span {
 }
 
 /*HANDHELD STYLES*/
-@media only screen and (min-width: 250px) and (max-width: 1039px) {
+@media only screen and (min-width: 250px) and (max-width: 1100px) {
     #social {
         display: none;
     }
@@ -266,7 +266,7 @@ h2.date-span {
 
     #intro h1 {
         font: bold 40px 'Open Sans', sans-serif;
-        line-height: 35px;
+        line-height: 45px;
     }
 
     #intro p {
