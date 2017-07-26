@@ -216,8 +216,8 @@ a {
     height: 150px;
     overflow: hidden;
     float: left;
-    margin-right: 30px;
-    margin-bottom: 15px;
+    margin-right: 10px;
+    margin-bottom: 30px;
 }
 .columns section div img {
     width: 300px;
@@ -229,8 +229,15 @@ a {
     display: none;
 }
 
-/*HANDHELD STYLES*/
+/* The indexes get awkard at these dimensions */
+@media only screen and (min-width: 1040px) and (max-width: 1140px) {
+    .columns h3 {
+        font-size: 20px;
+        line-height: 25px;
+    }
+}
 
+/*HANDHELD STYLES*/
 @media only screen and (min-width: 250px) and (max-width: 1039px) {
     #social {
         display: none;
@@ -271,6 +278,15 @@ a {
     .columns {
         width: 300px;
         margin: auto;
+    }
+
+    .columns h2 {
+        font-size: 40px;
+    }
+
+    .columns section div {
+        margin-top: 20px;
+        margin-bottom: 5px;
     }
 
     .year-band {
