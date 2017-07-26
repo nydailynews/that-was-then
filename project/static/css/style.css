@@ -73,7 +73,7 @@ body {
     margin-top: 10px;
 }
 
-#intro h2:before, h2:after {
+#intro h2:before, #intro h2:after {
     content: '';
     width: 150px;
     height: 3px;
@@ -140,7 +140,7 @@ body {
 
 /* AD STYLES */
 .center {
-    margin: auto;
+    margin: 20px auto;
     text-align: center;
 }
 .ad > span {
@@ -150,6 +150,10 @@ body {
 }
 
 /* MAIN CONTENT */
+
+.hide {
+    display: none;
+}
 
 a {
     color: #012730;
@@ -182,12 +186,12 @@ a {
     margin-bottom: 30px;
 }
 
-.columns h2 {
+h2.date-span {
     font: bold 30px 'Open Sans', sans-serif;
     color: #012730;
     margin: 30px 0;
-    column-span: all;
     text-align: center;
+    column-span: all;
 }
 
 .columns h2:after {
