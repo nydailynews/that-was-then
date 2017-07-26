@@ -260,7 +260,7 @@ h2.date-span {
         color: #d9af0e;
     }
 
-    #intro h2:before, h2:after {
+    #intro h2:before, #intro h2:after {
         display: none;
     }
 
