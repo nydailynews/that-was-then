@@ -174,6 +174,7 @@ a {
     -moz-column-rule: 1px solid #ddd;
     column-rule: 1px solid #ddd;
 }
+
 .columns h2 ~ p {
     display: none;
 }
@@ -242,7 +243,8 @@ h2.date-span {
 }
 
 /*HANDHELD STYLES*/
-@media only screen and (min-width: 250px) and (max-width: 1100px) {
+
+@media only screen and (min-width: 250px) and (max-width: 727px) {
     #social {
         display: none;
     }
@@ -297,6 +299,12 @@ h2.date-span {
         display: none;
     }
 
+    h2.date-span {
+    font: bold 30px 'Open Sans', sans-serif;
+    color: #012730;
+    margin: 15px 0 0 0;
+    text-align: center;
+    }
 
     #handheld {
         background-color: #012730;
@@ -318,8 +326,98 @@ h2.date-span {
         font: bold 14px 'Open Sans', sans-serif;
         color: white;
     }
-    .columns h3 {
-        line-height: 24px;
+
+}
+
+/*TABLET STYLES*/
+
+@media only screen and (min-width: 728px) and (max-width: 1024px) {
+
+    #social {
+        display: none;
     }
 
+    #nydn-logo {
+        margin: 8px 15px 0px 37px
+    }
+
+    #intro {
+        padding: 25px 25px 5px 25px;
+    }
+
+    #intro h2 {
+        font: normal 17px 'Open Sans', sans-serif;
+        color: #d9af0e;
+    }
+
+    #intro h2:before, #intro h2:after {
+        display: none;
+    }
+
+    #intro h1 {
+        font: bold 40px 'Open Sans', sans-serif;
+        line-height: 45px;
+    }
+
+    #intro p {
+        font: 15px 'Open Sans', sans-serif;
+        line-height: 20px;
+        margin: auto 10px;
+    }
+
+    .social {
+        margin-top: 20px;
+    }
+
+    h2.date-span {
+        font: bold 25px 'Open Sans', sans-serif;
+        color: #012730;
+        margin: 15px 0;
+        text-align: center;
+        column-span: all;
+    }
+
+    .columns {
+        -webkit-column-width: 300px;
+        -moz-column-width: 300px;
+        column-width: 300px;
+    }
+
+    .columns h2 {
+        font-size: 40px;
+    }
+
+    .columns section {
+        height: auto;
+}
+
+    .columns section div {
+        margin-bottom: 5px;
+    }
+
+    .year-band {
+        display: none;
+    }
+
+
+    #handheld {
+        background-color: #012730;
+        height: 50px;
+        width: 100%;
+        font: bold 14px 'Open Sans', sans-serif;
+        color: white;
+        letter-spacing: 1px;
+        padding: 10px;
+        text-align: center;
+        display: block;
+    }
+
+    #menu {
+        background-color: #D9AF08;
+        border-radius: 0;
+        height: 30px;
+        width: 110px;
+        font: bold 14px 'Open Sans', sans-serif;
+        color: white;
+    }
 }
