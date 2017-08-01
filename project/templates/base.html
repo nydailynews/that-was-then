@@ -115,17 +115,33 @@
 <body id="nydailynews" data-section="nydailynews" data-subsection="NY Daily News">
 
 <!-- SITEHEADER-START -->
-<header id="nydn-header">
-  <div id="nydn-header-wrap">
-    <a href="http://www.nydailynews.com"><div id="nydn-logo"></div></a>
-    <div id="social">
-      <a href="https://www.facebook.com/NYDailyNews"><img src="{{response.app.url_root}}static/img/FB-sm.png" alt="facebook logo"></a>
-      &nbsp;&nbsp;
-      <a href="https://twitter.com/NYDailyNews"><img src="{{response.app.url_root}}static/img/TW-sm.png" alt="twitter logo"></a>
-
+<header id="nydn-header" style="z-index: 10000;">
+    <div id="nydn-header-wrap">
+      <h1 id="nydn-logo"><a href="http://www.nydailynews.com">Daily News</a></h1>
+      <nav id="nydn-menu" style="z-index: 10000;">
+        <button class="hamburger" id="nydn-menu-open">Menu</button>
+        <nav>
+          <ul>
+            <li><a href="http://www.nydailynews.com/new-york">New York</a></li>
+            <li><a href="http://www.nydailynews.com/news">News</a></li>
+            <li><a href="http://www.nydailynews.com/news/politics">Politics</a></li>
+            <li><a href="http://www.nydailynews.com/sports">Sports</a></li>
+            <li><a href="http://www.nydailynews.com/entertainment">Entertainment</a></li>
+            <li><a href="http://www.nydailynews.com/opinion">Opinion</a></li>
+            <li><a href="http://www.nydailynews.com/life-style">Living</a></li>
+            <li><a href="http://www.nydailynews.com/autos">Autos</a></li>
+          </ul>
+        </nav>
+        <span id="nydn-menu-close">X</span>
+      </nav>
+      <nav id="nydn-sm">
+         <ul>
+             <li class="facebook"><a href="https://www.facebook.com/NYDailyNews/" target="_blank">facebook</a></li>
+             <li class="twitter"><a href="https://twitter.com/NYDailyNews" target="_blank">twitter</a></li>
+          </ul>
+      </nav>
     </div>
-  </div>
-</header>
+  </header>
 <!-- SITEHEADER-END -->
 
 <!-- CONTENT-START -->

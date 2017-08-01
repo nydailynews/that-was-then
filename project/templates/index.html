@@ -29,7 +29,7 @@
 
 <nav id="handheld">
     <div id="dropdown">
-        <div>SELECT YEAR
+        <div>SELECT YEAR &nbsp;
         <select id="menu" onchange="$('html, body').animate({ scrollTop: $('#'+this.value).offset().top - 250 }, 2000); document.location.hash='#' + this.value;">
         {% for item in response.yearband -%}
             <option value="{{item|slugify}}"> {{item}} </option>
@@ -46,6 +46,7 @@
 {% for section in response.yearband %}
     <h2 class="date-span" id="{{section|slugify}}">{{section}}</h2>
     {% set years = section.split('-') %}
+    <hr class="date-rule">
     <p class="hide">The big stories in New York's history from {{years[0]}} to {{years[1]}}.</p>
 
 <section class="columns">    
