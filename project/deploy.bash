@@ -6,7 +6,7 @@ ENVIRON='PROD'
 export environ=$ENVIRON
 SERVER='qa'
 DIR='/apps/project/'
-PROJECT='archive'
+PROJECT='amazing-history-nyc'
 LOCATION_OVERRIDE=0
 html_only() { 
     echo ''

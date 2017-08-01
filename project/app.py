@@ -59,7 +59,7 @@ def index():
     app.page['description_fb'] = 'Explore the sinners, saints, victors, victims, lovers, lost souls, magnates, madmen, geniuses and fools who powered the epic rise of America’s largest metropolis.'.decode('utf-8')
     app.page['twitter'] = 'Explore the sinners, saints, geniuses and fools who powered the epic rise of NYC in this AMAZING history. http://nydn.us/historyofNYC'.decode('utf-8')
     
-    with open('data/bigtown.json', 'rb') as jsond:
+    with open('static/data/bigtown.json', 'rb') as jsond:
         data = json.load(jsond)
 
     jq = JsonQuery(data)
