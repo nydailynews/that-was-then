@@ -22,6 +22,12 @@ body {
     vertical-align: 0.3em;
     margin: 0 -100%;
 }
+a {
+    color: black;
+}
+a:hover {
+    color: blue;
+}
 
 #intro h2:before {
     margin-right: 0.75em;
@@ -31,9 +37,21 @@ body {
     margin-left: 0.75em;
 }
 
+p {
+    text-align: center;
+    margin-top: 0;
+}
+dt {
+    float: left;
+}
 dt:after {
     content: ":";
 }
+dd {
+    text-indent: 10px;
+}
+.hide { display: none; }
+.show { display: block; }
 {% endblock style %}
 {% block head %}{% endblock head %}
 {% block content %}
@@ -41,12 +59,22 @@ dt:after {
     <h2><a href="http://interactive.nydailynews.com/project/archive/amazing-history-nyc/" target="_parent">Big Town, Big Times</a></h2>
     <p>An amazing history of NYC</p>
     <dl>
-        <dt>Next article</dt>
-        <dd id="next"></dd>
-        <dt>Previous article</dt>
-        <dd id="prev"></dd>
+        <dt class="next">Next article</dt>
+        <dd id="next" class="next"></dd>
+        <dt class="prev">Previous article</dt>
+        <dd id="prev" class="prev"></dd>
     </dl>
 </section>
+<!--
+<p>
+    <iframe id="footer-include" scrolling="no" style="width: 100%; height: 300px; border:2px solid red;"></iframe><script>
+    var ref = document.referrer;
+    i = document.getElementById('footer-include');
+    i.setAttribute("src", "http://interactiveqa.nydailynews.com/project/archive/amazing-history-nyc/amazing-history-nyc/sidebar/?r="+ref); 
+</script></p>
+<p>
+    HI TEST</p>
+-->
 <script>
 var sb = {
     rando: function()
@@ -71,6 +99,7 @@ var sb = {
         // Take a document.location such as .../amazing-history-nyc/sb.?r=http://www.nydailynews.com/new-york/good-land-fall-henry-hudson-great-river-1.790116
         // and return the r value.
         var u = document.location.search;
+        console.error(u.replace('?r=', '').trim());
         return u.replace('?r=', '').trim();
     },
     build_link(id, item) {
@@ -98,15 +127,21 @@ var sb = {
                 return false;
             }
 
-            if ( item['URL'] == sb.referer ) {
+            console.error(item);
+            //if ( item['URL'] == sb.referer ) {
+            if ( sb.referer.indexOf(item['Polopoly Slug/Content ID']) >= 0 ) {
                 sb.match = 1;
                 sb.prev = sb.current;
+                // IF IT'S THE FIRST ITEM
+                if ( i == 0 ) $('.prev').addClass('hide');
             }
             else {
                 sb.current = item;
             }
+            console.log(i, sb.data.length);
             
         });
+        console.error("HI", this);
         this.build_link('next', this.next);
         this.build_link('prev', this.prev);
     }

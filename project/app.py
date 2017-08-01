@@ -50,6 +50,7 @@ class JsonQuery(object):
         return uniques
 
 @app.route('/')
+@app.route('/amazing-history-nyc/')
 def index():
     app.page['url'] = 'http://interactive.nydailynews.com/project/archive/amazing-history-nyc/'
     app.page['title'] = 'The amazing history of New York City'.decode('utf-8')
@@ -70,6 +71,13 @@ def index():
         'yearband': yearband
     }
     return render_template('index.html', response=response)
+
+@app.route('/amazing-history-nyc/sidebar/')
+def sidebar():
+    response = {
+        'app': app
+    }
+    return render_template('sidebar_bigtown.html', response=response)
 
 @app.template_filter(name='last_update')
 def last_update(blank):
