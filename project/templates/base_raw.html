@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>{{response.app.page.title}}</title>
+    <link rel="icon" type="image/png" href="http://interactive.nydailynews.com/favicons.png">
+    <!-- DEFAULT -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+    <!-- DESCRIPTION -->
+    <meta name="description" content="{{response.app.page.description}}" />
+
+    <!-- KEYWORD -->
+    <meta name="keywords" content="{{response.app.page.keywords}}" />
+    <meta name="news_keywords" content="{{response.app.page.keywords}}" />
+
+    <!-- LINK -->
+    <link rel="canonical" href="{{response.app.page.url}}">
+    <meta property="og:url" content="{{response.app.page.url}}" />
+    <meta name="twitter:url" content="{{response.app.page.url}}" />
+
+    <!-- NO NEED TO FILL -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:domain" content="http://interactive.nydailynews.com"/>
+    <meta name="twitter:site" content="@nydailynews">
+    <meta name="twitter:creator" content="@kelliparker">
+    <meta name="decorator" content="responsive" />
+    <meta name="nydn_section" content="NY Daily News" />
+    <meta name="msvalidate.01" content="02916AAC0DA8B068EFE01D721E03ED7E" />
+    <meta name="p:domain_verify" content="78efe4f5c9935744af497772f68a0ee7" />
+    <meta property="fb:app_id" content="107464888913" />
+    <meta property="fb:admins" content="1594068001" />
+    <meta property="fb:pages" content="268914272540" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="NY Daily News" />
+    <meta property="article:publisher" content="https://www.facebook.com/NYDailyNews/" />
+    <meta name="localeCountry" content="US"/>
+    <meta name="localeLanguage" content="en" />
+
+    <script src="http://interactive.nydailynews.com/js/jquery.min.js"></script>
+
+    <style type="text/css">
+{% block style %}{% endblock style %}
+    </style>
+    
+    {% block head %}{% endblock head %}
+
+</head>
+<body>
+
+<!-- CONTENT-START -->
+
+<main>
+    <article>
+            {% block content %}{% endblock content %}
+    </article>
+</main>
+
+<!-- CONTENT-END -->
+</body>
+</html>
