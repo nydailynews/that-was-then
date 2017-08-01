@@ -2,6 +2,58 @@
 {% block style %}{% endblock style %}
 {% block head %}{% endblock head %}
 {% block content %}
+<script>
+var sidebar = {
+    rando: function()
+    {
+        // Generate a random ascii string, useful for busting caches.
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
+        for( var i=0; i < 20; i++ )
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
 
+        return text;
+    },
+    get_line_data: function(key, value) {
+        // loop through the data object until an item's key matches its value.
+        var l = this.data.length;
+        for ( var i = 0; i < l; i ++ ) {
+            if ( this.data[i][key] == value ) return this.data[i];
+        }
+    },
+    init: function() {
+        // Loop through the data.
+        // Figure out the last alert, also, add some helper attributes to the data.
+        //
+        // If a line has a value of -1 in its stop field, that means it's a current alert
+        // and the timer should be zero and stay at zero.
+        prev = {};
+        current = {};
+        match = 0;
+        Array.prototype.forEach.call(this.data, function(item, i) {
+            // If we match the URL we then want the previous and next articles
+            // to populate the sidebar.
+            
+            console.log(sidebar.data[i]);
+            sidebar.data[i]['ago'] = sidebar.calc_time_since(item['stop']);
+
+            // Log the current worst, in the case there are no active alerts.
+            // We use this to populate the lead time when there are no active alerts.
+            if ( is_zero == 0 ) {
+                if ( item['stop'] > worst['stop'] ) {
+                    worst = item;
+                    worsts = [item['line']];
+                }
+                // In case we have multiple alerts that ended at the same time
+                if ( item['stop'] == worst['stop'] && worsts.indexOf(item['line']) === -1 ) worsts.push(item['line']);
+            }
+        });
+    }
+};
+$.getJSON('../../static/data/bigtown.json', function(data) {
+    sidebar.data = data;
+    sidebar.init();
+});
+</script>
 {% endblock content %}
