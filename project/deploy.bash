@@ -5,7 +5,7 @@
 ENVIRON='PROD'
 export environ=$ENVIRON
 SERVER='qa'
-DIR='/apps/project/'
+DIR='/apps/project/archive/'
 PROJECT='amazing-history-nyc'
 LOCATION_OVERRIDE=0
 html_only() { 
@@ -15,7 +15,7 @@ html_only() {
 while [ "$1" != "" ]; do
     case $1 in
         -e | --environ ) shift
-            ENVIRON=$1
+            export environ=$1
             ;;
         -p | --project ) shift
             PROJECT=$1

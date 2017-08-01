@@ -18,7 +18,7 @@ page = {
     'description': '',
     'description_fb': '',
     'twitter': '',
-    'author': '"Interactive Project", "Kelli R. Parker", "Joe Murphy"',
+    'author': '"Interactive Project", "Kelli R. Parker", "Joe Murphy", "Steve Smirti"',
     'datestamp': '2017-08-02',
     'keywords': '',
     'keywords_array': '',
