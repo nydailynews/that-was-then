@@ -218,7 +218,7 @@ a {
 /* HEADER WITH IMAGE */
 #intro-bg {
     background-color: black;
-    background-image: url(../img/big-town-header.jpeg);
+    background-image: url("../img/" + attr(data-archive) + "-header.jpg");
     background-position: center;
     background-repeat: no-repeat;
 }

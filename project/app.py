@@ -76,7 +76,8 @@ def sonofsam():
     response = {
         'app': app,
         'data': data,
-        'yearband': yearband
+        'yearband': yearband,
+        'archive': 'son-of-sam'
     }
     return render_template('sonofsam.html', response=response)
 
