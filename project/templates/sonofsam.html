@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block style %}{% endblock style %}
+{% block content %}
+
+<div id="intro-bg">
+    <div id="intro">
+        <img src="{{response.app.url_root}}static/img/clock.png" alt="">
+        <h2>Big Town, Big Times</h2>
+        <h1>An Amazing History of NYC</h1>
+        <p>The sinners, saints, victors, victims, lovers, lost souls, magnates, madmen, geniuses and fools who powered the epic rise of America’s largest metropolis</p>
+
+        <div class="social">
+            <ul class="ra-share" id="ra-share-top">
+                <li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=">facebook</a> </li>
+                <li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=">Tweet</a></li>
+                <li class="ra-share-e"> <a href="mailto:?subject=&body=">email</a> </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<nav class="year-band">
+    <ul>
+        {% for item in response.yearband -%}
+        <li><a href="#{{item|slugify}}"> {{item}} </a></li>
+        {%- endfor %}
+    </ul>
+</nav>
+
+<nav id="handheld">
+    <div id="dropdown">
+        <div>SELECT YEAR &nbsp;
+        <select id="menu" onchange="$('html, body').animate({ scrollTop: $('#'+this.value).offset().top - 250 }, 2000); document.location.hash='#' + this.value;">
+        {% for item in response.yearband -%}
+            <option value="{{item|slugify}}"> {{item}} </option>
+        {%- endfor %}
+        </select>
+        </div>
+    </div>
+</nav>
+
+<hr class="yellow-rule">
+
+
+{% set ads = [ '01', '02', '03', '04' ] -%}
+{% for section in response.yearband %}
+    <h2 class="date-span" id="{{section|slugify}}">{{section}}</h2>
+    {% set years = section.split('-') %}
+    <hr class="date-rule">
+    <p class="hide">The big stories in New York's history from {{years[0]}} to {{years[1]}}.</p>
+
+<section class="columns">    
+    
+    {% for item in response.data if item['Bucket'] == section %}
+        <section>
+            <div>
+                <a href="{{item['URL']}}">
+                    <img src="{{item['PHOTO URL']|replace("article_1200","article_400")}}" alt="{{item['HEADLINE']}}">
+                </a>
+            </div>
+            <h4>{{item['BOROUGH  OR NEIGHBORHOOD']}} {{item['YEAR']}}</h4>
+            <h3><a href="{{item['URL']}}">{{item['HEADLINE']}}</a></h3>
+            {#
+            <p>{{item}}</p>
+            #}
+        </section>
+    {% endfor %}
+
+</section>
+{% if ads[loop.index0] %}
+    {% set ad_include = 'includes/ad' + ads[loop.index0] + '.html' %}
+    {% include ad_include %}
+{% endif %}
+{% endfor %}
+
+
+{% endblock content %}
