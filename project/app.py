@@ -105,7 +105,7 @@ def sidebar():
     response = {
         'app': app
     }
-    return render_template('sidebar_bigtown.html', response=response)
+    return render_template('bigtown_sidebar.html', response=response)
 
 @app.template_filter(name='last_update')
 def last_update(blank):
