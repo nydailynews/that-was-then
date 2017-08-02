@@ -54,7 +54,9 @@ def index():
     response = {
         'app': app,
     }
-    return render_template('index.html', response=response)
+    #return render_template('index.html', response=response)
+    return redirect(url_for('sonofsam'))
+
 
 @app.route('/son-of-sam/')
 def sonofsam():
