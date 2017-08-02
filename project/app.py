@@ -51,6 +51,15 @@ class JsonQuery(object):
 
 @app.route('/')
 def index():
+    response = {
+        'app': app,
+    }
+    #return render_template('index.html', response=response)
+    return redirect(url_for('sonofsam'))
+
+
+@app.route('/son-of-sam/')
+def sonofsam():
     app.page['url'] = 'http://interactive.nydailynews.com/project/archive/amazing-history-nyc/'
     app.page['title'] = 'The amazing history of New York City'.decode('utf-8')
     app.page['description'] = 'Explore the sinners, saints, victors, victims, lovers, lost souls, magnates, madmen, geniuses and fools who powered the epic rise of NYC.'.decode('utf-8')
@@ -69,7 +78,36 @@ def index():
         'data': data,
         'yearband': yearband
     }
-    return render_template('index.html', response=response)
+    return render_template('sonofsam.html', response=response)
+
+@app.route('/amazing-history-nyc/')
+def bigtown():
+    app.page['url'] = 'http://interactive.nydailynews.com/project/archive/amazing-history-nyc/'
+    app.page['title'] = 'The amazing history of New York City'.decode('utf-8')
+    app.page['description'] = 'Explore the sinners, saints, victors, victims, lovers, lost souls, magnates, madmen, geniuses and fools who powered the epic rise of NYC.'.decode('utf-8')
+    app.page['keywords'] = 'history of new york city, new york history, old new york, history of nyc, nyc history, history of new york, new york city history, manhattan history, jay maeder, big town'.decode('utf-8')
+    app.page['title_fb'] = 'The amazing history of New York City'.decode('utf-8')
+    app.page['description_fb'] = 'Explore the sinners, saints, victors, victims, lovers, lost souls, magnates, madmen, geniuses and fools who powered the epic rise of America’s largest metropolis.'.decode('utf-8')
+    app.page['twitter'] = 'Explore the sinners, saints, geniuses and fools who powered the epic rise of NYC in this AMAZING history. http://nydn.us/historyofNYC'.decode('utf-8')
+    
+    with open('static/data/bigtown.json', 'rb') as jsond:
+        data = json.load(jsond)
+
+    jq = JsonQuery(data)
+    yearband = jq.get_uniques('Bucket')
+    response = {
+        'app': app,
+        'data': data,
+        'yearband': yearband
+    }
+    return render_template('bigtown.html', response=response)
+
+@app.route('/amazing-history-nyc/sidebar/')
+def sidebar():
+    response = {
+        'app': app
+    }
+    return render_template('bigtown_sidebar.html', response=response)
 
 @app.template_filter(name='last_update')
 def last_update(blank):

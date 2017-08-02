@@ -1,0 +1,154 @@
+{% extends "base_raw.html" %}
+{% block style %}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+#intro h2 {
+    position: relative;
+    font: normal 25px 'Open Sans', sans-serif;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    margin: 15px auto;
+}
+#intro h2:before, #intro h2:after {
+    content: '';
+    width: 150px;
+    height: 3px;
+    display:inline-block;
+    background-color: black;
+    vertical-align: 0.3em;
+    margin: 0 -100%;
+}
+a {
+    color: black;
+}
+a:hover {
+    color: blue;
+}
+
+#intro h2:before {
+    margin-right: 0.75em;
+}
+
+#intro h2:after {
+    margin-left: 0.75em;
+}
+
+p {
+    text-align: center;
+    margin-top: 0;
+}
+dt {
+    float: left;
+}
+dt:after {
+    content: ":";
+}
+dd {
+    text-indent: 10px;
+}
+.hide { display: none; }
+.show { display: block; }
+{% endblock style %}
+{% block head %}{% endblock head %}
+{% block content %}
+<section id="intro">
+    <h2><a href="http://interactive.nydailynews.com/project/archive/amazing-history-nyc/" target="_parent">Big Town, Big Times</a></h2>
+    <p>An amazing history of NYC</p>
+    <dl>
+        <dt class="next">Next article</dt>
+        <dd id="next" class="next"></dd>
+        <dt class="prev">Previous article</dt>
+        <dd id="prev" class="prev"></dd>
+    </dl>
+</section>
+<!--
+<p>
+    <iframe id="footer-include" scrolling="no" style="width: 100%; height: 300px; border:2px solid red;"></iframe><script>
+    var ref = document.referrer;
+    i = document.getElementById('footer-include');
+    i.setAttribute("src", "http://interactiveqa.nydailynews.com/project/archive/amazing-history-nyc/amazing-history-nyc/sidebar/?r="+ref); 
+</script></p>
+<p>
+    HI TEST</p>
+-->
+<script>
+var sb = {
+    rando: function()
+    {
+        // Generate a random ascii string, useful for busting caches.
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        for( var i=0; i < 20; i++ )
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        return text;
+    },
+    get_line_data: function(key, value) {
+        // loop through the data object until an item's key matches its value.
+        var l = this.data.length;
+        for ( var i = 0; i < l; i ++ ) {
+            if ( this.data[i][key] == value ) return this.data[i];
+        }
+    },
+    parse_url: function() {
+        // Take a document.location such as .../amazing-history-nyc/sb.?r=http://www.nydailynews.com/new-york/good-land-fall-henry-hudson-great-river-1.790116
+        // and return the r value.
+        var u = document.location.search;
+        console.error(u.replace('?r=', '').trim());
+        return u.replace('?r=', '').trim();
+    },
+    build_link(id, item) {
+        var markup = '<a href="' + item['URL'] + '" target="_top">' + item['HEADLINE'] + '</a>';
+        document.getElementById(id).innerHTML=markup;
+    },
+    init: function() {
+        // Loop through the data.
+        // Figure out the last alert, also, add some helper attributes to the data.
+        //
+        // If a line has a value of -1 in its stop field, that means it's a current alert
+        // and the timer should be zero and stay at zero.
+        this.prev = {};
+        this.current = {};
+        this.next = {};
+        this.match = 0;
+        this.referer = this.parse_url();
+        Array.prototype.forEach.call(this.data, function(item, i) {
+            // If we match the URL we then want the previous and next articles
+            // to populate the sb.
+            item = sb.data[i];
+            if ( sb.match == 1 ) {
+                sb.next = item;
+                sb.match = 2;
+                return false;
+            }
+
+            console.error(item);
+            //if ( item['URL'] == sb.referer ) {
+            if ( sb.referer.indexOf(item['Polopoly Slug/Content ID']) >= 0 ) {
+                sb.match = 1;
+                sb.prev = sb.current;
+                // IF IT'S THE FIRST ITEM
+                if ( i == 0 ) $('.prev').addClass('hide');
+            }
+            else {
+                sb.current = item;
+            }
+            console.log(i, sb.data.length);
+            
+        });
+        console.error("HI", this);
+        this.build_link('next', this.next);
+        this.build_link('prev', this.prev);
+    }
+};
+$.getJSON('../../static/data/bigtown.json', function(data) {
+    sb.data = data;
+    sb.init();
+});
+</script>
+{% endblock content %}
