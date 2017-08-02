@@ -5,12 +5,12 @@
 <div attr-archive="{{response.archive}}" id="intro-bg">
     <div id="intro">
         <img src="{{response.app.url_root}}static/img/clock.png" alt="">
-        <h2>Son of Sam</h2>
-        <h1>NYC in the Summer of Sam</h1>
-        <p>In the summer of 1977, a serial killer known as the Son of Sam terrorized New York City. The Daily News looks back at its coverage of the manhunt, capture and conviction of David Berkowitz.</p>
+        <h2 class="son-of-sam">Summer of ‘77</h2>
+        <h1>The Hunt for Son of Sam</h1>
+        <p>During the summer of 1977, a serial killer known as the Son of Sam terrorized New York City. The Daily News looks back at its coverage of the manhunt, capture and conviction of David Berkowitz.</p>
 
         <div class="social">
-            <ul class="ra-share" id="ra-share-top">
+            <ul class="ra-share" id="ra-share-top" style="margin-bottom: 0px;">
                 <li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=">facebook</a> </li>
                 <li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=">Tweet</a></li>
                 <li class="ra-share-e"> <a href="mailto:?subject=&body=">email</a> </li>
@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<nav class="year-band">
+<nav id="son-of-sam" class="year-band">
     <ul>
         {% for item in response.yearband -%}
         <li><a href="#{{item|slugify}}"> {{item}} </a></li>
@@ -27,10 +27,10 @@
     </ul>
 </nav>
 
-<nav id="handheld">
+<nav id="handheld-sam">
     <div id="dropdown">
-        <div>SELECT YEAR &nbsp;
-        <select id="menu" onchange="$('html, body').animate({ scrollTop: $('#'+this.value).offset().top - 250 }, 2000); document.location.hash='#' + this.value;">
+        <div style="color: black;">SELECT SECTION &nbsp;
+        <select id="menu-sam" onchange="$('html, body').animate({ scrollTop: $('#'+this.value).offset().top - 250 }, 2000); document.location.hash='#' + this.value;">
         {% for item in response.yearband -%}
             <option value="{{item|slugify}}"> {{item}} </option>
         {%- endfor %}
@@ -39,7 +39,7 @@
     </div>
 </nav>
 
-<hr class="yellow-rule">
+<hr class="red-rule">
 
 
 {% set ads = [ '01', '02', '03', '04' ] -%}
@@ -55,11 +55,11 @@
         <section>
             <div>
                 <a href="{{item['URL']}}">
-                    <img src="{{item['PHOTO URL']|replace("article_1200","article_400")}}" alt="{{item['HEADLINE']}}">
+                    <img src="{{item['Photo URL']|replace("article_1200","article_400")}}" alt="{{item['Headline']}}">
                 </a>
             </div>
-            <h4>{{item['BOROUGH  OR NEIGHBORHOOD']}} {{item['YEAR']}}</h4>
-            <h3><a href="{{item['URL']}}">{{item['HEADLINE']}}</a></h3>
+            <h4>{{item['DATE']}}</h4>
+            <h3><a href="{{item['URL']}}">{{item['Headline']}}</a></h3>
             {#
             <p>{{item}}</p>
             #}
