@@ -2,7 +2,7 @@
 {% block style %}{% endblock style %}
 {% block content %}
 
-<div attr-archive="{{response.archive}}" id="intro-bg">
+<div attr-archive="{{response.archive}}" id="intro-bg-sam">
     <div id="intro">
         <img src="{{response.app.url_root}}static/img/clock.png" alt="">
         <h2 class="son-of-sam">Summer of ‘77</h2>
@@ -29,7 +29,7 @@
 
 <nav id="handheld-sam">
     <div id="dropdown">
-        <div style="color: black;">SELECT SECTION &nbsp;
+        <div>SELECT SECTION &nbsp;
         <select id="menu-sam" onchange="$('html, body').animate({ scrollTop: $('#'+this.value).offset().top - 250 }, 2000); document.location.hash='#' + this.value;">
         {% for item in response.yearband -%}
             <option value="{{item|slugify}}"> {{item}} </option>
