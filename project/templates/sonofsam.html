@@ -45,9 +45,8 @@
 {% set ads = [ '01', '02', '03', '04' ] -%}
 {% for section in response.yearband %}
     <h2 class="date-span" id="{{section|slugify}}">{{section}}</h2>
-    {% set years = section.split('-') %}
     <hr class="date-rule">
-    <p class="hide">The big stories in New York's history from {{years[0]}} to {{years[1]}}.</p>
+    <p class="hide">The Son of Sam news in the New York Daily News, {{section}}.</p>
 
 <section class="columns">    
     
@@ -59,7 +58,7 @@
                 </a>
             </div>
             <h4>{{item['DATE']}}</h4>
-            <h3><a href="{{item['URL']}}">{{item['Headline']}}</a></h3>
+            <h3><a href="{{item['Link to archive story']}}">{{item['Headline']}}</a></h3>
             {#
             <p>{{item}}</p>
             #}
