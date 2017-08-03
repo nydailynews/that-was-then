@@ -11,9 +11,9 @@
 
         <div class="social">
             <ul class="ra-share" id="ra-share-top" style="margin-bottom: 0px;">
-                <li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=">facebook</a> </li>
-                <li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=">Tweet</a></li>
-                <li class="ra-share-e"> <a href="mailto:?subject=&body=">email</a> </li>
+                <li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{response.app.page.url}}">facebook</a> </li>
+                <li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text={{response.app.page.twitter}}">Tweet</a></li>
+                <li class="ra-share-e"> <a href="mailto:?subject={{response.app.page.title}}&body={{response.app.page.description}}%20{{response.app.page.url}}">email</a> </li>
             </ul>
         </div>
     </div>
@@ -54,7 +54,7 @@
         <section>
             <div>
                 <a href="{{item['URL']}}">
-                    <img src="{{item['Photo URL']|replace("article_1200","article_400")}}" alt="{{item['Headline']}}">
+                    <img src="{{item['Photo URL']|replace("poladm.nydailynews.com:8080","assets.nydailynews.com")|replace("article_1200","article_400")}}" alt="{{item['Headline']}}">
                 </a>
             </div>
             <h4>{{item['DATE']}}</h4>

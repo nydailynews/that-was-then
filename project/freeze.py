@@ -10,9 +10,9 @@ from app import app
 app.debug = False
 environ = os.getenv('environ', 'DEV')
 if environ == 'QA':
-    app.url_root = 'http://interactiveqa.nydailynews.com/project/archive/amazing-history-nyc/'
+    app.url_root = 'http://interactiveqa.nydailynews.com/project/archive/'
 elif environ == 'PROD':
-    app.url_root = 'http://interactive.nydailynews.com/project/archive/amazing-history-nyc/'
+    app.url_root = 'http://interactive.nydailynews.com/project/archive/'
 
 class FreezeThings:
     """ We put the Flask Frozen methods in this class so we don't have to

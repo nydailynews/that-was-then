@@ -61,12 +61,18 @@ def index():
 @app.route('/son-of-sam/')
 def sonofsam():
     app.page['url'] = 'http://interactive.nydailynews.com/project/archive/son-of-sam/'
-    app.page['title'] = 'PAGE TITLE'.decode('utf-8')
-    app.page['description'] = 'DESCRIPTION'.decode('utf-8')
+    app.page['title'] = 'SON OF SAM: Relive the hunt for infamous NYC serial killer David Berkowitz'.decode('utf-8')
+    app.page['title_fb'] = app.page['title']
+    app.page['title_twitter'] = app.page['title_fb']
+    app.page['description'] = 'In the summer of 1977, the Son of Sam terrorized NYC. We look back at Daily News coverage of the manhunt and capture of serial killer David Berkowitz.'.decode('utf-8')
     app.page['keywords'] = 'history of new york city, new york history, old new york, history of nyc, nyc history, history of new york, new york city history, manhattan history, jay maeder, big town'.decode('utf-8')
-    app.page['title_fb'] = 'FB TITLE'.decode('utf-8')
-    app.page['description_fb'] = 'FB DESCRIPTION'.decode('utf-8')
-    app.page['twitter'] = 'TWITTER. http://nydn.us/sonofsam'.decode('utf-8')
+    app.page['description_fb'] = 'During the summer of 1977, the Son of Sam terrorized New York City. We look back at Daily News coverage of the manhunt, capture and conviction of David Berkowitz.'.decode('utf-8')
+    app.page['twitter'] = '%s. http://nydn.us/sonofsam'.decode('utf-8') % app.page['title']
+    app.page['keywords'] = 'son of sam, David Berkowitz, who is the son of sam, jimmy breslin, son of sam new york daily news, berkowitz son of sam, the son of sam, why do they call him son of sam, son of sam murders, pete hamill'.decode('utf-8')
+    app.page['keywords_array'] = '"archives","son of sam","david berkowitz","jimmy breslin","pete hamill"'.decode('utf-8')
+    app.page['shareimg'] = 'son-of-sam-header.jpg'.decode('utf-8')
+    app.page['shareimgdesc'] = 'A photo of a gun'.decode('utf-8')
+
     
     with open('static/data/sonofsam.json', 'rb') as jsond:
         data = json.load(jsond)
