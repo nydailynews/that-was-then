@@ -348,7 +348,7 @@
    "Headline": "Cops release a new sketch of Son of Sam",
    "DATE": "August 10, 1977",
    "Bucket": "August 1977",
-   "Photo URL": "http://poladm.nydailynews.com:8080/polopoly_fs/1.3365900.1501277987!/img/httpImage/image.jpg_gen/derivatives/article_1200/7sonofsam28a-4-web.jpg",
+   "Photo URL": "http://assets.nydailynews.com/polopoly_fs/1.3365900.1501790068!/img/httpImage/image.jpg_gen/derivatives/article_1200/article-sonofsam-mug.jpg",
    "Originally Published": "08-10-1977",
    "MM": 8,
    "DD": 10,
@@ -393,7 +393,7 @@
    "Headline": "Breslin: Son of Sam struck out with girls...so he struck out",
    "DATE": "August 12, 1977",
    "Bucket": "August 1977",
-   "Photo URL": "http://poladm.nydailynews.com:8080/polopoly_fs/1.3361866.1501174262!/img/httpImage/image.jpg_gen/derivatives/article_1200/sonofsam28a-3-web.jpg",
+   "Photo URL": "http://assets.nydailynews.com/polopoly_fs/1.2315394.1500746706!/img/httpImage/image.jpg_gen/derivatives/article_1200/david-berkowitz-44-caliber-killer-son-sam.jpg",
    "Originally Published": "08-12-1977",
    "MM": 8,
    "DD": 12,
@@ -468,7 +468,7 @@
    "Headline": "Parking ticket was the key to catching Son of Sam",
    "DATE": "August 12, 1977",
    "Bucket": "August 1977",
-   "Photo URL": "http://poladm.nydailynews.com:8080/polopoly_fs/1.3370191.1501462548!/img/httpImage/image.jpg_gen/derivatives/article_1200/8sonofsam29a-7-web.jpg",
+   "Photo URL": "http://assets.nydailynews.com/polopoly_fs/1.3370191.1501462548!/img/httpImage/image.jpg_gen/derivatives/article_1200/8sonofsam29a-7-web.jpg",
    "Originally Published": "08-12-1977",
    "MM": 8,
    "DD": 12,
@@ -538,5 +538,20 @@
    "Banner added": "yes",
    "Photos": "done",
    "URL": "http://www.nydailynews.com/news/crime/berkowitz-sentenced-25-years-life-prison-1978-article-1.2254595"
+ },
+ {
+   "Headline": "Son of Sam' David Berkowitz speaks to the Daily News 35 years after killings",
+   "DATE": "August 10, 2012",
+   "Bucket": "Later",
+   "Photo URL": "http://assets.nydailynews.com/polopoly_fs/1.1133413.1344602876!/img/httpImage/image.jpg_gen/derivatives/article_1200/david-berkowitz.jpg",
+   "Originally Published": "08-10-2012",
+   "MM": 8,
+   "DD": 10,
+   "Year": 2012,
+   "Prepped Anew or Embargo Date": "08-03-2012",
+   "Polopoly Slug": "1.1133269",
+   "Banner added": "yes",
+   "Photos": "done",
+   "URL": "http://www.nydailynews.com/new-york/son-sam-david-berkowitz-speaks-daily-news-decries-violence-senseless-prays-victims-notorious-1976-77-killing-spree-article-1.1133269"
  }
 ]
