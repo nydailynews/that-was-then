@@ -170,7 +170,7 @@ a {
     opacity: .8
 }
 
-@media (max-width: 480px) {
+/*@media (max-width: 480px) {
     #nydn-header #nydn-header-wrap #nydn-sm ul {
         overflow: hidden;
         padding: 0;
@@ -185,7 +185,7 @@ a {
     #nydn-header #nydn-header-wrap {
         padding: 10px
     }
-}
+}*/
 #interactive-logo a {
     color: #cdcdcd;
     font-size: 13px;
@@ -263,7 +263,7 @@ a {
 
 #intro h2:before, #intro h2:after {
     content: '';
-    width: 150px;
+    width: 100px;
     height: 3px;
     display:inline-block;
     background-color: white;
@@ -357,23 +357,23 @@ a {
 }
 
 #son-of-sam .year-band li a {
-    color: black;
-}
-
-#son-of-sam .year-band li a:hover {
-    background-color: #cd0000;
     color: white;
 }
 
-.red-rule {
+#son-of-sam .year-band li a:hover {
+    background-color: #F4D03F;
+    color: black;
+}
+
+.rule {
     height: 8px;
-    background-color: #cd0000;
+    background-color: #F4D03F;
     border: 0;
     margin: 0;
 }
 
 #son-of-sam h2.date-span {
-    color: #cd0000;
+    color: black;
 }
 
 #handheld-sam {
@@ -495,16 +495,16 @@ hr.date-rule {
 /*HANDHELD STYLES*/
 
 @media only screen and (min-width: 250px) and (max-width: 727px) {
-    #social {
+    #nydn-header #nydn-header-wrap #nydn-menu {
+        display: none;
+    }
+
+    #nydn-header #nydn-header-wrap #nydn-sm {
         display: none;
     }
 
     #nydn-logo {
         margin: 8px 15px 0px 37px
-    }
-
-    #intro-bg-sam {
-        height: 375px;
     }
 
     #intro {
@@ -521,8 +521,8 @@ hr.date-rule {
     }
 
     #intro h1 {
-        font: bold 35px 'Open Sans', sans-serif;
-        line-height: 45px;
+        font: bold 30px 'Open Sans', sans-serif;
+        line-height: 40px;
     }
 
     #intro p {
@@ -593,11 +593,18 @@ hr.date-rule {
 /*    SON OF SAM HANDHELD STYLES  */
 
     #intro-bg-sam {
-    background-image: url(../img/son-of-sam-header-mobile.jpg);
+        background-image: url(../img/son-of-sam-header-mobile.jpg);
+        height: 325px;
     }
 
-    #intro {
-        top: 50%;
+    #intro.sam {
+        top: 47%;
+    }
+
+    #intro.sam p {
+        font: 15px 'Open Sans', sans-serif;
+        line-height: 20px;
+        margin: auto 10px;
     }
 
     #intro h2.son-of-sam {
@@ -607,6 +614,12 @@ hr.date-rule {
 
     .clock {
         display: none;
+    }
+
+    .rule {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 49px;
     }
 
     #handheld-sam {
@@ -625,7 +638,7 @@ hr.date-rule {
     }
 
     #menu-sam {
-        background-color: #cd0000;
+        background-color: #F4D03F;
         height: 30px;
         width: 110px;
         font: bold 14px 'Open Sans', sans-serif;
@@ -644,10 +657,6 @@ hr.date-rule {
 
     #nydn-logo {
         margin: 8px 15px 0px 37px
-    }
-
-    #intro-bg-sam {
-        height: 325px;
     }
 
     #intro {
@@ -735,10 +744,24 @@ hr.date-rule {
 
 /*  SON OF SAM TABLET STYLES  */
 
-    #intro h2.son-of-sam {
+    #intro-bg-sam {
+        height: 325px;
+    }
+
+    #intro.sam {
+        top: 50%;
+    }
+
+    #intro.sam h2 {
         font: normal 17px 'Open Sans', sans-serif;
         color: #ead61c;
     }
+
+    #intro.sam p {
+    font: 15px 'Open Sans', sans-serif;
+    line-height: 25px;
+    margin: auto 65px;
+}
 
     #handheld-sam {
         background-color: #4E4E4E;
@@ -750,13 +773,22 @@ hr.date-rule {
         padding: 10px;
         text-align: center;
         display: block;
+        position: -webkit-sticky;
+        position: sticky;
+        top: -1px;
     }
 
     #menu-sam {
-        background-color: #ead61c;
+        background-color: #F4D03F;
         height: 30px;
         width: 100px;
         font: bold 14px 'Open Sans', sans-serif;
         padding: 0 15px;
+    }
+
+    .rule {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 49px;
     }
 }
