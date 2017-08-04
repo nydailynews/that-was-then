@@ -3,8 +3,8 @@
 {% block content %}
 
 <div attr-archive="{{response.archive}}" id="intro-bg-sam">
-    <div id="intro">
-        <img src="{{response.app.url_root}}static/img/clock.png" alt="">
+    <div id="intro" class="sam">
+        <img class="clock" src="{{response.app.url_root}}static/img/clock.png" alt="an image of clock going counter-clockwise">
         <h2 class="son-of-sam">Summer of ‘77</h2>
         <h1>The Hunt for Son of Sam</h1>
         <p>During the summer of 1977, a serial killer known as the Son of Sam terrorized New York City. The Daily News looks back at its coverage of the manhunt, capture and conviction of David Berkowitz.</p>
@@ -25,6 +25,8 @@
         <li><a href="#{{item|slugify}}"> {{item}} </a></li>
         {%- endfor %}
     </ul>
+    <hr class="red-rule">
+
 </nav>
 
 <nav id="handheld-sam">
@@ -38,7 +40,6 @@
         </div>
     </div>
 </nav>
-
 <hr class="red-rule">
 
 

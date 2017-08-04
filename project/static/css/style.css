@@ -339,28 +339,41 @@ a {
     background-position: center;
 }
 
+#intro {
+    width: 100%;
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    top: 68%;
+    transform: translateY(-50%);
+}
+
+.social {
+    margin-top: 25px;
+}
+
 #son-of-sam .year-band ul {
     background-color: #4E4E4E;
 }
 
 #son-of-sam .year-band li a {
-    color: #ead61c;
+    color: black;
 }
 
 #son-of-sam .year-band li a:hover {
-    background-color: #ead61c;
-    color: black;
+    background-color: #cd0000;
+    color: white;
 }
 
 .red-rule {
     height: 8px;
-    background-color: #ead61c;
+    background-color: #cd0000;
     border: 0;
     margin: 0;
 }
 
 #son-of-sam h2.date-span {
-    color: black;
+    color: #cd0000;
 }
 
 #handheld-sam {
@@ -400,9 +413,9 @@ a {
     -moz-column-gap: 5em;
     -webkit-column-gap: 5em;
     column-gap: 5em;
-    -webkit-column-rule: 1px solid #4E4E4E;
-    -moz-column-rule: 1px solid #4E4E4E;
-    column-rule: 1px solid #4E4E4E;
+    -webkit-column-rule: 1px solid #ccc;
+    -moz-column-rule: 1px solid #ccc;
+    column-rule: 1px solid #ccc;
 }
 
 .columns h2 ~ p {
@@ -579,9 +592,21 @@ hr.date-rule {
 
 /*    SON OF SAM HANDHELD STYLES  */
 
+    #intro-bg-sam {
+    background-image: url(../img/son-of-sam-header-mobile.jpg);
+    }
+
+    #intro {
+        top: 50%;
+    }
+
     #intro h2.son-of-sam {
         font: normal 17px 'Open Sans', sans-serif;
-        color: #ead61c;
+        color: white;
+    }
+
+    .clock {
+        display: none;
     }
 
     #handheld-sam {
@@ -600,7 +625,7 @@ hr.date-rule {
     }
 
     #menu-sam {
-        background-color: #ead61c;
+        background-color: #cd0000;
         height: 30px;
         width: 110px;
         font: bold 14px 'Open Sans', sans-serif;
