@@ -227,9 +227,6 @@ a {
     width: 100%;
     padding: 50px;
     text-align: center;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 #intro h1 {
@@ -339,7 +336,7 @@ a {
     background-position: center;
 }
 
-#intro {
+#intro.sam {
     width: 100%;
     padding: 50px;
     text-align: center;
