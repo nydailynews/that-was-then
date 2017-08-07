@@ -70,7 +70,7 @@ def sonofsam():
     app.page['twitter'] = '%s. http://nydn.us/sonofsam'.decode('utf-8') % app.page['title']
     app.page['keywords'] = 'son of sam, David Berkowitz, who is the son of sam, jimmy breslin, son of sam new york daily news, berkowitz son of sam, the son of sam, why do they call him son of sam, son of sam murders, pete hamill'.decode('utf-8')
     app.page['keywords_array'] = '"archives","son of sam","david berkowitz","jimmy breslin","pete hamill"'.decode('utf-8')
-    app.page['shareimg'] = 'son-of-sam-header.jpg'.decode('utf-8')
+    app.page['shareimg'] = 'FB-sm.png'
     app.page['shareimgdesc'] = 'A photo of a gun used by David Berkowitz'.decode('utf-8')
     app.page['datestamp'] = '2017-08-07'
 
