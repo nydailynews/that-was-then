@@ -72,6 +72,7 @@ def sonofsam():
     app.page['keywords_array'] = '"archives","son of sam","david berkowitz","jimmy breslin","pete hamill"'.decode('utf-8')
     app.page['shareimg'] = 'son-of-sam-header.jpg'.decode('utf-8')
     app.page['shareimgdesc'] = 'A photo of a gun used by David Berkowitz'.decode('utf-8')
+    app.page['datestamp'] = '2017-08-07'
 
     with open('static/data/sonofsam.json', 'rb') as jsond:
         data = json.load(jsond)
