@@ -3,6 +3,10 @@
 body {
     font-family: 'Open Sans', sans-serif;
 }
+#intro {
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+}
 #intro h2 {
     position: relative;
     font: normal 25px 'Open Sans', sans-serif;
@@ -11,7 +15,7 @@ body {
     text-align: center;
     text-transform: uppercase;
     color: black;
-    margin: 15px auto;
+    margin: 15px auto 0;
 }
 #intro h2:before, #intro h2:after {
     content: '';
@@ -59,9 +63,9 @@ dd {
     <h2><a href="http://interactive.nydailynews.com/project/archive/amazing-history-nyc/" target="_parent">Big Town, Big Times</a></h2>
     <p>An amazing history of NYC</p>
     <dl>
-        <dt class="next">Next article</dt>
+        <dt id="next_parent" class="next">Next article</dt>
         <dd id="next" class="next"></dd>
-        <dt class="prev">Previous article</dt>
+        <dt id="prev_parent" class="prev">Previous article</dt>
         <dd id="prev" class="prev"></dd>
     </dl>
 </section>
@@ -99,12 +103,18 @@ var sb = {
         // Take a document.location such as .../amazing-history-nyc/sb.?r=http://www.nydailynews.com/new-york/good-land-fall-henry-hudson-great-river-1.790116
         // and return the r value.
         var u = document.location.search;
-        console.error(u.replace('?r=', '').trim());
         return u.replace('?r=', '').trim();
     },
-    build_link(id, item) {
+    build_link: function(id, item) {
         var markup = '<a href="' + item['URL'] + '" target="_top">' + item['HEADLINE'] + '</a>';
         document.getElementById(id).innerHTML=markup;
+    },
+    remove: function(item) {
+        console.log('asdfasdf');
+        child = document.getElementById(item);
+        child.parentNode.removeChild(child);
+        par = document.getElementById(item + '_parent');
+        par.parentNode.removeChild(par);
     },
     init: function() {
         // Loop through the data.
@@ -112,9 +122,9 @@ var sb = {
         //
         // If a line has a value of -1 in its stop field, that means it's a current alert
         // and the timer should be zero and stay at zero.
-        this.prev = {};
+        this.prev = null;
         this.current = {};
-        this.next = {};
+        this.next = null;
         this.match = 0;
         this.referer = this.parse_url();
         Array.prototype.forEach.call(this.data, function(item, i) {
@@ -127,7 +137,6 @@ var sb = {
                 return false;
             }
 
-            console.error(item);
             //if ( item['URL'] == sb.referer ) {
             if ( sb.referer.indexOf(item['Polopoly Slug/Content ID']) >= 0 ) {
                 sb.match = 1;
@@ -138,12 +147,13 @@ var sb = {
             else {
                 sb.current = item;
             }
-            console.log(i, sb.data.length);
             
         });
-        console.error("HI", this);
-        this.build_link('next', this.next);
-        this.build_link('prev', this.prev);
+        if ( this.next === null ) this.remove('next');
+        else this.build_link('next', this.next);
+
+        if ( this.prev === null ) this.remove('prev');
+        else this.build_link('prev', this.prev);
     }
 };
 $.getJSON('../../static/data/bigtown.json', function(data) {
