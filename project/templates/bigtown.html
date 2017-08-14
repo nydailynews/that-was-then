@@ -11,9 +11,9 @@
 
         <div class="social">
             <ul class="ra-share" id="ra-share-top">
-                <li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=">facebook</a> </li>
-                <li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=">Tweet</a></li>
-                <li class="ra-share-e"> <a href="mailto:?subject=&body=">email</a> </li>
+                <li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://interactive.nydailynews.com/project/archive/amazing-history-nyc/">facebook</a> </li>
+                <li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=Check+out+these+articles+about+New+York+City's+history&url=http://interactive.nydailynews.com/project/archive/amazing-history-nyc/&via=nydni&related=nydailynews">Tweet</a></li>
+                <li class="ra-share-e"> <a href="mailto:?subject=New York City history project&body=http://interactive.nydailynews.com/project/archive/amazing-history-nyc/">email</a> </li>
             </ul>
         </div>
     </div>
@@ -42,7 +42,7 @@
 <hr class="yellow-rule">
 
 
-{% set ads = [ '01', '02', '03', '04' ] -%}
+{% set ads = [ '02', '01', '03', '04' ] -%}
 {% for section in response.yearband %}
     <h2 class="date-span" id="{{section|slugify}}">{{section}}</h2>
     {% set years = section.split('-') %}
@@ -59,7 +59,7 @@
                 </a>
             </div>
             <h4>{{item['BOROUGH  OR NEIGHBORHOOD']}} {{item['YEAR']}}</h4>
-            <h3><a href="{{item['URL']}}">{{item['HEADLINE']}}</a></h3>
+            <h3><a href="{{item['URL']}}">{{item['Proposed Headline']}}</a></h3>
             {#
             <p>{{item}}</p>
             #}
