@@ -5,8 +5,7 @@ body {
     max-height: 188px;
 }
 #intro {
-    border-top: 1px solid #dedede;
-    border-bottom: 1px solid #dedede;
+    border: 2px solid #012730;
 }
 #intro h2 {
     position: relative;
@@ -15,23 +14,26 @@ body {
     overflow: hidden;
     text-align: center;
     text-transform: uppercase;
-    color: black;
+    color: #012730;
     margin: 10px auto 0;
 }
 #intro h2:before, #intro h2:after {
     content: '';
-    width: 150px;
+    width: 125px;
     height: 3px;
     display:inline-block;
-    background-color: black;
+    background-color: #012730;
     vertical-align: 0.3em;
     margin: 0 -100%;
 }
-a {
-    color: black;
+#intro a {
+    color: #012730;
+    text-decoration: none;
+    cursor: pointer;
 }
 a:hover {
-    color: blue;
+    color: #d9af0e;
+    text-decoration: underline;
 }
 
 #intro h2:before {
@@ -55,10 +57,11 @@ dt {
 dt:after {
 }
 dd {
-    text-indent: 10px;
-}
+    -webkit-margin-start: 0;
+    }
 .hide { display: none; }
 .show { display: block; }
+
 {% endblock style %}
 {% block head %}{% endblock head %}
 {% block content %}
