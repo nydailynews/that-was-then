@@ -29,7 +29,7 @@
 
 <nav id="handheld">
     <div id="dropdown">
-        <div>SELECT YEAR &nbsp;
+        <div>SELECT DATE RANGE &nbsp;
         <select id="menu" onchange="$('html, body').animate({ scrollTop: $('#'+this.value).offset().top - 250 }, 2000); document.location.hash='#' + this.value;">
         {% for item in response.yearband -%}
             <option value="{{item|slugify}}"> {{item}} </option>

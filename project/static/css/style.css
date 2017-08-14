@@ -568,7 +568,7 @@ hr.date-rule {
         background-color: #012730;
         height: 50px;
         width: 100%;
-        font: bold 14px 'Open Sans', sans-serif;
+        font: bold 13px 'Open Sans', sans-serif;
         color: white;
         letter-spacing: 1px;
         padding: 10px;
@@ -582,7 +582,7 @@ hr.date-rule {
     #menu {
         background-color: #D9AF08;
         height: 30px;
-        width: 110px;
+        width: 118px;
         font: bold 14px 'Open Sans', sans-serif;
         color: white;
     }
