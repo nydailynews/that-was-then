@@ -136,8 +136,9 @@ var sb = {
                 return false;
             }
 
-            //if ( item['URL'] == sb.referer ) {
-            if ( item['Polopoly Slug/Content ID'].indexOf(sb.referer) >= 0 ) {
+            // We have to convert the field to a string in order to use the indexOf method
+            var lookup = '' + item['Polopoly Slug/Content ID'];
+            if ( lookup.indexOf(sb.referer) >= 0 ) {
                 sb.match = 1;
                 sb.prev = sb.current;
                 // IF IT'S THE FIRST ITEM
