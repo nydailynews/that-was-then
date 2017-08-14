@@ -61,7 +61,9 @@ dd {
     }
 .hide { display: none; }
 .show { display: block; }
-
+@media only screen and ( min-width: 220px ) and ( max-width:727px ) {
+    p { display: none; }
+}
 {% endblock style %}
 {% block head %}{% endblock head %}
 {% block content %}
