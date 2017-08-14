@@ -109,7 +109,7 @@ var sb = {
         return u.replace('?r=', '').trim();
     },
     build_link: function(id, item) {
-        var markup = '<a href="' + item['URL'] + '" target="_top">' + item['HEADLINE'] + '</a>';
+        var markup = '<a href="' + item['URL'] + '" target="_top">' + item['Short hed'] + '</a>';
         document.getElementById(id).innerHTML=markup;
     },
     remove: function(item) {
