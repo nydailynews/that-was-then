@@ -55,7 +55,7 @@ def index():
         'app': app,
     }
     #return render_template('index.html', response=response)
-    return redirect(url_for('sonofsam'))
+    return redirect(url_for('bigtown'))
 
 
 @app.route('/son-of-sam/')

@@ -110,7 +110,6 @@ var sb = {
         document.getElementById(id).innerHTML=markup;
     },
     remove: function(item) {
-        console.log('asdfasdf');
         child = document.getElementById(item);
         child.parentNode.removeChild(child);
         par = document.getElementById(item + '_parent');
@@ -138,7 +137,7 @@ var sb = {
             }
 
             //if ( item['URL'] == sb.referer ) {
-            if ( sb.referer.indexOf(item['Polopoly Slug/Content ID']) >= 0 ) {
+            if ( item['Polopoly Slug/Content ID'].indexOf(sb.referer) >= 0 ) {
                 sb.match = 1;
                 sb.prev = sb.current;
                 // IF IT'S THE FIRST ITEM
