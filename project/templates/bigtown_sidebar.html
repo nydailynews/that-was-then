@@ -2,6 +2,7 @@
 {% block style %}
 body {
     font-family: 'Open Sans', sans-serif;
+    max-height: 188px;
 }
 #intro {
     border-top: 1px solid #dedede;
@@ -15,7 +16,7 @@ body {
     text-align: center;
     text-transform: uppercase;
     color: black;
-    margin: 15px auto 0;
+    margin: 10px auto 0;
 }
 #intro h2:before, #intro h2:after {
     content: '';
@@ -45,11 +46,13 @@ p {
     text-align: center;
     margin-top: 0;
 }
+dl {
+    text-align: center;
+}
 dt {
-    float: left;
+    color: #999;
 }
 dt:after {
-    content: ":";
 }
 dd {
     text-indent: 10px;
