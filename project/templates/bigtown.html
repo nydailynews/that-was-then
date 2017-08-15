@@ -55,14 +55,11 @@
         <section>
             <div>
                 <a href="{{item['URL']}}">
-                    <img src="{{item['PHOTO URL']|replace("article_1200","article_400")}}" alt="{{item['HEADLINE']}}">
+                    <img src="{{item['PHOTO URL']|replace("poladm.nydailynews.com:8080","assets.nydailynews.com")|replace("article_1200","article_400")}}" alt="{{item['Proposed Headline']}}">
                 </a>
             </div>
             <h4>{{item['BOROUGH  OR NEIGHBORHOOD']}} {{item['YEAR']}}</h4>
             <h3><a href="{{item['URL']}}">{{item['Proposed Headline']}}</a></h3>
-            {#
-            <p>{{item}}</p>
-            #}
         </section>
     {% endfor %}
 
